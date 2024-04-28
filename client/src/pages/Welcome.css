@@ -1,0 +1,26 @@
+#enter-class-code {
+    height: 10vh;
+    width: 25vw;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: xxx-large;
+    font-stretch: wider;
+    overflow: hidden;
+}
+
+#enter-class {
+    margin-top: 1vh;
+}
+
+#welcome-page {
+    /* display: flex; */
+    height: 100vh;
+    vertical-align: middle;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* .break {
+    width: 100vw;
+    height: 0;
+} */
