@@ -1,4 +1,4 @@
-import "./Welcome.css"
+import "../styles/Welcome.css"
 
 export default function Welcome() {
     return (
@@ -7,6 +7,9 @@ export default function Welcome() {
             <br />
             <div class="break"></div>
             <button id="enter-class"> Enter class </button>
+            <br></br>
+            <a> Register </a>
+            <a> Log in</a>
         </div>
     )
 }
