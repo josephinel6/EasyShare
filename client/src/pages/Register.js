@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Register() {
 
@@ -6,7 +8,8 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    async function registerUser(e) {
+    async function processRegistration(e) {
+        console.log("Recieved")
         e.preventDefault();
         try {
             await axios.post('/register', {
@@ -21,11 +24,16 @@ export default function Register() {
     }
 
     return (
-        <div>
-            <input placeholder="Name" />
-            <input placeholder="Email" type="email" />
-            <input placeholder="Password" type="password" />
-            <button class="styled-button"> Register </button>
-        </div>
+        <form onSubmit={processRegistration} className="center">
+            <input type="text" placeholder="name" value={name} onChange={ev => setName(ev.target.value)} />
+            <br />
+            <input type="email" placeholder="someone@example.com" value={email} onChange={ev => setEmail(ev.target.value)} />
+            <br />
+            <input type="password" placeholder="password" value={password} onChange={ev => setPassword(ev.target.value)} />
+            <br />
+            <button className="styled-button">Register</button>
+            <div> Already have an account? <Link to={'/login'}> Login </Link> </div>
+            <div> Need to share? <Link to={'/'}> Enter code </Link> </div>
+        </form>
     )
 }

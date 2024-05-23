@@ -1,13 +1,20 @@
 import './App.css';
 import Welcome from './pages/Welcome';
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Default from './pages/Default';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import axios from 'axios';
+
+axios.defaults.baseURL = "http://localhost:4000";
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Welcome />
-      </div>
-    </Provider>
+    <Routes>
+      <Route path="/" element={<Default />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   );
 }
 

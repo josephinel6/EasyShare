@@ -1,7 +1,26 @@
-POST http://localhost:4000/login 
+POST http://localhost:4000/register 
 Content-Type: application/json
 
 {
-    "email":"example3",
-    "password":"125"
+    "name":"test11",
+    "email":"test11",
+    "password":"test11"
 }
+
+###
+
+POST http://localhost:4000/login
+Content-Type:application/json
+
+{
+    "email":"test11",
+    "password":"test11"
+}
+
+### 
+
+GET http://localhost:4000/user
+
+###
+
+GET http://localhost:4000/

@@ -1,15 +1,18 @@
-.App {
-  text-align: center;
-}
-
-.button {
+.styled-button {
   border: none;
   border-radius: 0.5em;
+  background-color: var(--accent);
+  color: white;
+}
+
+.large-button {
   padding-top: 0.6em;
   padding-bottom: 0.6em;
   padding-right: 1em;
   padding-left: 1em;
-  background-color: var(--accent);
   font-size: large;
-  color: white;
+}
+
+.center {
+  text-align: center;
 }
