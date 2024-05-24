@@ -13,18 +13,28 @@ export default function Register() {
     async function processLogin(e) {
         console.log("Recieved")
         e.preventDefault();
+        // try {
+        //     await axios.post('/login', {
+        //         email,
+        //         password,
+        //     })
+        //         .then((token) => {
+        //             localStorage.setItem("token", JSON.stringify(token));
+        //         })
+        //     alert("Login successful");
+        //     navigate('/');
+        // } catch {
+        //     alert("Registration failed");
+        // }
         try {
             await axios.post('/login', {
                 email,
-                password,
+                password
             })
-                .then((token) => {
-                    localStorage.setItem("token", JSON.stringify(token));
-                })
             alert("Login successful");
             navigate('/');
         } catch {
-            alert("Registration failed");
+            alert("Login failed");
         }
     }
 

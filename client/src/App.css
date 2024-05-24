@@ -16,3 +16,13 @@
 .center {
   text-align: center;
 }
+
+/* #test {
+  border-color: orange;
+  border-style: solid;
+} */
+
+.popup-content {
+  position: fixed;
+  left: 0 !important;
+}
