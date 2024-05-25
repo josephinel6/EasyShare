@@ -38,7 +38,6 @@ route.post('/login', async (req, res) => {
         if (await bcrypt.compareSync(password, user.password)) {
             jwt.sign({ id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
                 if (err) throw err;
-                console.log(token)
                 res.cookie('token', token).json(token);
             })
         } else {
@@ -52,9 +51,10 @@ route.post('/login', async (req, res) => {
 
 route.get('/user', (req, res) => {
     const { token } = req.cookies;
-    
+    console.log("Called 1")
+
     if (token) {
-        console.log(token)
+        console.log("called")
         jwt.verify(token, process.env.JWT_SECRET, {}, async (err, userData) => {
             if (err) throw err;
             const user = await User.findById(userData.id);

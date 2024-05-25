@@ -17,18 +17,20 @@ export default function Default() {
     //     }
     // }, []);
 
+    useEffect(() => {
+        console.log("Call");
+        axios.get('/user').then((response) => {
+            console.log("Called")
+            setUser(response);
+        })
+    }, [])
 
-
-    axios.get('/user').then(({ data }) => {
-        setLoaded(true);
-        setUser(data);
-    });
-
-    if (user != null) {
-        return <Home />
-    } else {
+    if (user == null) {
         return <Welcome />
     }
+
+    return <Home user={user} />
+
     // console.log("Test")
     // axios.get('/user').then((data) => {
     //     if (data) {

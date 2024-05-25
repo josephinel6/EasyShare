@@ -36,8 +36,4 @@ app.get('/', (req, res) => {
 //     })
 // }
 
-function getUserFromToken(token) {
-
-}
-
 app.listen(4000);

@@ -4,19 +4,7 @@ import CreateBox from "./CreateBox";
 import Popup from 'reactjs-popup';
 
 
-export default function Home() {
-
-    const [user, setUser] = useState(null);
-    useEffect(() => {
-        axios.get('/user').then((response) => {
-            console.log(response)
-            setUser(response);
-        })
-    }, [])
-
-    if (user == null) {
-        return <div> Home </div>
-    }
+export default function Home(user) {
 
     return (
         <div>
