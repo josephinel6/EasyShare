@@ -1,3 +1,21 @@
+POST http://localhost:4000/box/share
+Content-Type: application/json
+
+{
+    "share":"test2",
+    "code":"31556082"
+}
+
+###
+
+GET http://localhost:4000/box/shares
+Content-Type: application/json
+
+{
+    "code":"31556082"
+}
+
+###
 POST http://localhost:4000/register 
 Content-Type: application/json
 

@@ -1,21 +1,22 @@
 import { useState } from "react"
 import axios from "axios";
 
-export default function CreateBox() {
+export default function CreateBox({ createdStatus }) {
 
     const [name, setName] = useState("");
-
-    console.log("Create box")
 
     async function createNewBox(ev) {
         ev.preventDefault();
         try {
             await axios.post('/box/create', {
                 name
+            }).then((box) => {
+                console.log(box.data)
+                alert(box.data.name + " created successfully. The code is " + box.data.code);
+                createdStatus(true);
             })
-            alert(name + "Created successfully");
-        } catch {
-            alert("Operation failed");
+        } catch (err) {
+            alert("Operation failed" + err);
         }
     }
 

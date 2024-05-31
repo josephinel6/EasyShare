@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import Default from './pages/Default';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import axios from 'axios';
+import Home from './pages/Home';
 
 axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.withCredentials = true;
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" element={<Default />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<Home />} />
     </Routes>
   );
 }
