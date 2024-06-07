@@ -58,7 +58,7 @@ export default function Home(user) {
             <br></br>
             <div id="user-boxes">
                 <button onClick={() => setOpenCreate(true)} id="create-box" className="box-card"> + </button>
-                <Popup open={openCreate}> <CreateBox createdStatus={boxCreated} className="box-card" /></Popup>
+                <CreateBox createdStatus={boxCreated} open={openCreate} />
                 {boxes && boxes.map((box) =>
                     <button className="box-card" onClick={() => open(box)}> {box.name} </button>
                 )}

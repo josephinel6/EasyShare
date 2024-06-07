@@ -1,29 +1,35 @@
-/* #create-box-popup {
-    /* background: var(--popup-bg); */
-/* background-color: pink;
-    border: rgb(255, 49, 83); */
-/* border-radius: 0.5em;
-    /* border-width: 1px; 
+#create-box-popup {
+    background: var(--popup-bg);
+    /* background-color: pink; */
+    border: black;
+    border-radius: 0.5em;
+    border-width: 1px;
     border-style: solid;
-    padding: 1em 
+    width: 23.2em;
+    display: flex;
+    justify-content: center;
 }
 
 input {
-    padding: 0.75em;
+    /* padding: 0.75em; */
     margin-top: 3em;
     font-size: 0.75em;
     min-width: 20vw;
+    height: 5vh;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0.5em;
+    padding-left: 0.5em;
 }
 
 #create-box-button {
-    margin-left: 0.5em;
+    margin-left: 0.3em;
     padding: 0.5em;
+    height: 5vh;
 }
 
 .close-button {
-    top: 0.2em;
-    right: 0.3em;
-    position: absolute;
+    /* top: 0.2em;
+    right: 0.3em;x`
+    position: absolute; */
 }
-
-*/

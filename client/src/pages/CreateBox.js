@@ -1,8 +1,9 @@
 import "../styles/create-box.css"
+import "../styles/home.css"
 import { useState } from "react"
 import axios from "axios";
 
-export default function CreateBox({ createdStatus }) {
+export default function CreateBox({ createdStatus, open }) {
 
     const [name, setName] = useState("");
 
@@ -26,7 +27,7 @@ export default function CreateBox({ createdStatus }) {
     }
 
     return (
-        <div id="create-box-popup">
+        <div id="create-box-popup" className="box-card" style={open ? {} : { display: 'none' }} >
             {/* <div> Create a box </div> */}
             <button className="close-button" onClick={() => close()}>x </button>
             <input maxLength={50} type="text" placeholder="Box name" onChange={ev => setName(ev.target.value)} />
