@@ -1,0 +1,45 @@
+body {
+    padding: 1.5vw;
+}
+
+#logout {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+}
+
+#create-box {
+    background-color: pink;
+    border: none;
+    color: white;
+    height: 7em;
+    /* padding-left: 0.5em;
+    padding-right: 0.5em; */
+    /* border-radius: 0.2em;
+    font-size: 2em; */
+}
+
+.box-card {
+    background-color: rgb(255, 232, 236);
+    color: black;
+    border-color: black;
+    border-radius: 0.5em;
+    height: 7em;
+    width: 12.45em;
+    margin: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1.2em;
+    transition: .2s;
+    overflow-y: auto;
+}
+
+.box-card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#user-boxes {
+    display: flex;
+    flex-wrap: wrap;
+}

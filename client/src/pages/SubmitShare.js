@@ -1,9 +1,11 @@
 import { useState } from "react"
 import axios from "axios";
 
-export default function SubmitShare(code) {
+export default function SubmitShare({ code }) {
 
     const [share, setShare] = useState("");
+
+    console.log(code);
 
     async function submit() {
         await axios.post('/box/share',

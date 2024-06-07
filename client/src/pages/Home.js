@@ -1,4 +1,5 @@
 import axios from "axios";
+import "../styles/home.css"
 import { useState, useEffect } from "react";
 import CreateBox from "./CreateBox";
 import Popup from 'reactjs-popup';
@@ -10,7 +11,7 @@ export default function Home(user) {
     const [boxes, setBoxes] = useState([]);
     const [openCreate, setOpenCreate] = useState(false);
     const [openView, setOpenView] = useState(false);
-    const [openBox, setOpenBox] = useState(null);
+    const [openBox, setOpenBox] = useState({});
 
     console.log("Home")
 
@@ -32,6 +33,12 @@ export default function Home(user) {
         if (status == true) {
             setOpenCreate(false);
             console.log("Open i sfalse");
+            axios.get('/box/get-all')
+                .then((response) => {
+                    console.log("Called")
+                    setBoxes(response.data);
+                    console.log("line 16");
+                })
         }
     }
 
@@ -40,18 +47,26 @@ export default function Home(user) {
         setOpenBox(box);
     }
 
+    function logout() {
+        //* do this
+        axios.post('/logout');
+    }
+
     return (
         <div>
             <h>Welcome back {user.name}</h>
+            <br></br>
             <div id="user-boxes">
+                <button onClick={() => setOpenCreate(true)} id="create-box" className="box-card"> + </button>
+                <Popup open={openCreate}> <CreateBox createdStatus={boxCreated} className="box-card" /></Popup>
                 {boxes && boxes.map((box) =>
-                    <button class="box-card" onClick={() => open(box)}> {box.name} </button>
+                    <button className="box-card" onClick={() => open(box)}> {box.name} </button>
                 )}
             </div>
-            <button onClick={() => setOpenCreate(true)}> Create box </button>
             {/* <Popup trigger={<button > Create box </button>} open={open}> <CreateBox createdStatus={boxCreated} /></Popup> */}
-            <Popup open={openCreate}> <CreateBox createdStatus={boxCreated} /></Popup>
-            <Popup open={openView}> <Box box={openBox} /></Popup>
+            {/* <Box box={openBox} style={openView ? {} : { display: 'none' }} /> */}
+            <Box box={openBox} open={openView} />
+            <button onClick={() => logout()} id="logout" className="styled-button"> Logout </button>
         </div>
     )
 }

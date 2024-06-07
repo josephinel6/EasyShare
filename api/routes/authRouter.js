@@ -26,6 +26,7 @@ route.post('/register', async (req, res) => {
     } catch (err) {
         console.log("fail")
         console.log(err);
+        res.status(405).json(err);
     }
 })
 
@@ -64,6 +65,10 @@ route.get('/user', (req, res) => {
         console.log("No token");
         res.json(null)
     }
+})
+
+route.post('/logout', (req, res) => {
+    res.cookie("token", '').json(true);
 })
 
 module.exports = route;

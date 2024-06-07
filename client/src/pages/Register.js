@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log("Call");
+        axios.get('/user')
+            .then((response) => {
+                if (response.data) {
+                    navigate('/');
+                }
+            })
+    }, [])
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -18,6 +30,7 @@ export default function Register() {
                 password,
             })
             alert("Registration successful");
+            navigate('/');
         } catch {
             alert("Registration failed");
         }

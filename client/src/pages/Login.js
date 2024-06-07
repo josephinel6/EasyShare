@@ -5,6 +5,17 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Register() {
 
+    useEffect(() => {
+        console.log("Call");
+        axios.get('/user')
+            .then((response) => {
+                if (response.data) {
+                    navigate('/');
+                }
+            })
+    }, [])
+
+
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");

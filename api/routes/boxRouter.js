@@ -75,15 +75,13 @@ route.post('/share', async (req, res) => {
     }
 })
 
-route.get('/shares', async (req, res) => {
-    console.log(req.body)
-    const { code } = req.body;
+route.get('/shares/:code', async (req, res) => {
+    const code = req.params.code;
     console.log(code);
 
     const shares = await Share.find({ code });
 
     res.json(shares);
-    console.log("Test");
 })
 
 route.get('/verify', async (req, res) => {
@@ -92,6 +90,32 @@ route.get('/verify', async (req, res) => {
         res.json(true);
     } else {
         res.json(false);
+    }
+})
+
+route.post('/delete-share', async (req, res) => {
+    console.log(req.body);
+    const { id } = req.body;
+
+    console.log(id);
+
+    try {
+        const share = await Share.findByIdAndDelete(id);
+        res.json(share);
+    } catch (err) {
+        res.json(err);
+    }
+})
+
+route.post('/delete', async (req, res) => {
+
+    const { code } = req.body;
+
+    try {
+        const deleted = await Box.findOneAndDelete({ code });
+        res.json(deleted);
+    } catch (err) {
+        res.json(err);
     }
 })
 

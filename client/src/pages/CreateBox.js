@@ -1,3 +1,4 @@
+import "../styles/create-box.css"
 import { useState } from "react"
 import axios from "axios";
 
@@ -20,10 +21,16 @@ export default function CreateBox({ createdStatus }) {
         }
     }
 
+    function close() {
+        createdStatus(true);
+    }
+
     return (
-        <div id="test">
-            <input style={{ margin: "200px" }} type="text" placeholder="Box name" onChange={ev => setName(ev.target.value)} />
-            <button className="styled-button" onClick={createNewBox}>Create</button>
+        <div id="create-box-popup">
+            {/* <div> Create a box </div> */}
+            <button className="close-button" onClick={() => close()}>x </button>
+            <input maxLength={50} type="text" placeholder="Box name" onChange={ev => setName(ev.target.value)} />
+            <button className="styled-button" id="create-box-button" onClick={createNewBox}>Create</button>
         </div>
     )
 }

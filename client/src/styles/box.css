@@ -1,0 +1,62 @@
+.share {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0.5em;
+    padding: 0.8em;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 80vw;
+    margin: 1vh;
+}
+
+.share p {
+    padding: 0;
+    margin: 0;
+    padding-right: 1em;
+    /* margin-top: 6px; */
+}
+
+.close-button {
+    float: right;
+    /* position: absolute;
+    right: 1vh; */
+}
+
+#box-contents {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    padding-left: 0.8em;
+    width: 85vw;
+    padding-right: .8em;
+    background-color: rgb(255, 233, 236);
+    margin-left: 7.5vw;
+}
+
+/* #shares {
+    /* align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 85vw; */
+
+.delete-share {
+    float: right;
+}
+
+.delete-share:hover {
+    cursor: pointer;
+}
+
+/* #wrapper {
+    
+} */
+
+#box-name {
+    margin-left: 0.5vw;
+    margin-bottom: 2vh;
+    font-weight: 500;
+}

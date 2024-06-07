@@ -1,3 +1,7 @@
+:root {
+  --popup-bg: rgb(255, 232, 236);
+}
+
 .styled-button {
   border: none;
   border-radius: 0.5em;
@@ -25,4 +29,15 @@
 .popup-content {
   position: fixed;
   left: 0 !important;
+}
+
+.close-button {
+  border: none;
+  background: none;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.close-button:hover {
+  cursor: pointer;
 }
