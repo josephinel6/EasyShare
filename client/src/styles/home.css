@@ -6,6 +6,9 @@ body {
     position: absolute;
     top: 2vh;
     right: 2vw;
+    padding: 0.5em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
 }
 
 #create-box {
@@ -26,12 +29,13 @@ body {
     border-radius: 0.5em;
     height: 7em;
     width: 12.45em;
-    margin: 0.2em;
+    margin: 0.15em;
     padding-left: 1em;
     padding-right: 1em;
     font-size: 1.2em;
     transition: .2s;
     overflow-y: auto;
+    z-index: 1;
 }
 
 .box-card:hover {
@@ -42,4 +46,17 @@ body {
 #user-boxes {
     display: flex;
     flex-wrap: wrap;
+}
+
+#welcome-statement {
+    margin-left: 0.5vw;
+    /* margin-bottom: 0.5vh;
+    margin-top: 0.5vh; */
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+#logout:hover {
+    cursor: pointer;
 }

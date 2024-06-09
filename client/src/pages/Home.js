@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import CreateBox from "./CreateBox";
 import Popup from 'reactjs-popup';
 import Box from "./Box";
+import { useNavigate } from "react-router-dom";
 
 
-export default function Home(user) {
+export default function Home({ user }) {
+
+    const navigate = useNavigate();
 
     const [boxes, setBoxes] = useState([]);
     const [openCreate, setOpenCreate] = useState(false);
@@ -28,18 +31,15 @@ export default function Home(user) {
             })
     }, [])
 
-    const boxCreated = (status) => {
+    const createBoxOpen = (status) => {
         console.log(status);
-        if (status == true) {
-            setOpenCreate(false);
-            console.log("Open i sfalse");
-            axios.get('/box/get-all')
-                .then((response) => {
-                    console.log("Called")
-                    setBoxes(response.data);
-                    console.log("line 16");
-                })
-        }
+        setOpenCreate(status);
+        axios.get('/box/get-all')
+            .then((response) => {
+                console.log("Called")
+                setBoxes(response.data);
+                console.log("line 16");
+            })
     }
 
     function open(box) {
@@ -47,26 +47,32 @@ export default function Home(user) {
         setOpenBox(box);
     }
 
-    function logout() {
-        //* do this
-        axios.post('/logout');
+    const boxOpen = (status) => {
+        console.log(status);
+        if (status == false) {
+            setOpenView(false);
+        }
+        axios.get('/box/get-all')
+            .then((response) => {
+                setBoxes(response.data);
+            })
     }
+
+    console.log(user);
 
     return (
         <div>
-            <h>Welcome back {user.name}</h>
+            <h2 id="welcome-statement">Welcome back, {user.name}! </h2>
             <br></br>
             <div id="user-boxes">
                 <button onClick={() => setOpenCreate(true)} id="create-box" className="box-card"> + </button>
-                <Popup open={openCreate}> <CreateBox createdStatus={boxCreated} className="box-card" /></Popup>
+                <Popup open={openCreate}> <CreateBox viewStatus={createBoxOpen} className="box-card" /></Popup>
                 {boxes && boxes.map((box) =>
                     <button className="box-card" onClick={() => open(box)}> {box.name} </button>
                 )}
             </div>
             {/* <Popup trigger={<button > Create box </button>} open={open}> <CreateBox createdStatus={boxCreated} /></Popup> */}
             {/* <Box box={openBox} style={openView ? {} : { display: 'none' }} /> */}
-            <Box box={openBox} open={openView} />
-            <button onClick={() => logout()} id="logout" className="styled-button"> Logout </button>
         </div>
     )
 }

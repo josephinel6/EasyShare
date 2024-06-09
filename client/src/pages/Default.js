@@ -3,6 +3,7 @@ import Home from "./Home";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/home.css"
 
 export default function Default() {
 
@@ -32,10 +33,20 @@ export default function Default() {
             })
     }, [])
 
+
+    function logout() {
+        //* do this
+        axios.post('/logout').then((respose) => {
+            setUser(null);
+        })
+    }
+
     console.log(user);
 
     if (user) {
-        return <Home />
+        return <div>            <button onClick={() => logout()} id="logout" className="styled-button"> Logout </button>
+
+            <Home user={user} /></div>
     } else {
         return <Welcome />
     }

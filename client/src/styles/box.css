@@ -18,12 +18,6 @@
     /* margin-top: 6px; */
 }
 
-.close-button {
-    float: right;
-    /* position: absolute;
-    right: 1vh; */
-}
-
 #box-contents {
     border: 1px;
     border-color: black;
@@ -31,10 +25,13 @@
     border-radius: 0.5em;
     padding: 0.5em;
     padding-left: 0.8em;
-    width: 85vw;
-    padding-right: .8em;
+    width: 85%;
+    padding-right: 0.8em;
     background-color: rgb(255, 233, 236);
-    margin-left: 7.5vw;
+    z-index: 10;
+    position: absolute;
+    top: 14vh;
+    left: 7.5%;
 }
 
 /* #shares {
@@ -56,7 +53,29 @@
 } */
 
 #box-name {
-    margin-left: 0.5vw;
-    margin-bottom: 2vh;
+    /* margin-left: 0.5vw; */
+    /* margin-bottom: 2vh; */
     font-weight: 500;
+    margin-bottom: 0.1vh;
+    margin-left: 0.6vw;
+}
+
+#box-code {
+    margin-top: 0vh;
+    margin-left: 0.6vw;
+    font-weight: 500;
+    margin-bottom: 2vh;
+    font-size: 1em;
+}
+
+#delete-box {
+    float: right;
+    font-size: 1.25em;
+    margin-top: 0.55em;
+    margin-right: 1.3em;
+    /* margin-right: 0.2em; */
+}
+
+.close-button {
+    float: right;
 }

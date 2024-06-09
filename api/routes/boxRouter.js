@@ -50,10 +50,10 @@ route.post('/create', async (req, res) => {
 });
 
 route.get('/get-all', async (req, res) => {
-    console.log("get all")
+    // console.log("get all")
     const user = await getUserFromToken(req);
     const boxes = await Box.find({ owner: user._id });
-    console.log(boxes);
+    // console.log(boxes);
     res.json(boxes);
 })
 
@@ -76,7 +76,9 @@ route.post('/share', async (req, res) => {
 })
 
 route.get('/shares/:code', async (req, res) => {
-    const code = req.params.code;
+    console.log("/shares/code");
+    const code = req.params['code'];
+
     console.log(code);
 
     const shares = await Share.find({ code });
