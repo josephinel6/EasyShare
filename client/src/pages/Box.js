@@ -53,7 +53,6 @@ export default function Box({ box, boxOpen, open }) {
                 console.log(err);
                 alert("Deletion failed");
             })
-
     }
 
 

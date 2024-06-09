@@ -15,7 +15,7 @@ body {
     background-color: pink;
     border: none;
     color: white;
-    height: 7em;
+    /* height: 7em; */
     /* padding-left: 0.5em;
     padding-right: 0.5em; */
     /* border-radius: 0.2em;
@@ -27,8 +27,11 @@ body {
     color: black;
     border-color: black;
     border-radius: 0.5em;
-    height: 7em;
-    width: 12.45em;
+    /* height: 7em; */
+    /* width: 12.45em;
+    margin: 0.15em; */
+    width: 15.8vw;
+    height: 19vh;
     margin: 0.15em;
     padding-left: 1em;
     padding-right: 1em;
