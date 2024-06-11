@@ -88,7 +88,7 @@ route.get('/shares/:code', async (req, res) => {
 
 route.get('/verify', async (req, res) => {
     const { code } = req.body;
-    if (await Box.find({ code })) {
+    if (await Box.find({ code })[0]) {
         res.json(true);
     } else {
         res.json(false);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import "../styles/register-login.css"
 
 export default function Register() {
 
@@ -38,15 +39,15 @@ export default function Register() {
 
     return (
         <form onSubmit={processRegistration} className="center">
-            <input type="text" placeholder="name" value={name} onChange={ev => setName(ev.target.value)} />
+            <input type="text" className="field" placeholder="Name" value={name} onChange={ev => setName(ev.target.value)} />
             <br />
-            <input type="email" placeholder="someone@example.com" value={email} onChange={ev => setEmail(ev.target.value)} />
+            <input type="email" className="field" placeholder="someone@example.com" value={email} onChange={ev => setEmail(ev.target.value)} />
             <br />
-            <input type="password" placeholder="password" value={password} onChange={ev => setPassword(ev.target.value)} />
+            <input type="password" className="field" placeholder="Password" value={password} onChange={ev => setPassword(ev.target.value)} />
             <br />
-            <button className="styled-button">Register</button>
-            <div> Already have an account? <Link to={'/login'}> Login </Link> </div>
-            <div> Need to share? <Link to={'/'}> Enter code </Link> </div>
+            <button className="styled-button form-submission">Register</button>
+            <div className="small-text"> Already have an account? <Link to={'/login'}> Login </Link> </div>
+            <div className="small-text"> Need to share? <Link to={'/'}> Enter code </Link> </div>
         </form>
     )
 }

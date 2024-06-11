@@ -14,7 +14,7 @@ export default function Home({ user }) {
     const [boxes, setBoxes] = useState([]);
     const [openCreate, setOpenCreate] = useState(false);
     const [openView, setOpenView] = useState(false);
-    const [openBox, setOpenBox] = useState({});
+    const [openBox, setOpenBox] = useState(null);
 
     console.log("Home")
 
@@ -43,8 +43,8 @@ export default function Home({ user }) {
     }
 
     function open(box) {
-        setOpenView(true);
         setOpenBox(box);
+        setOpenView(true);
     }
 
     const boxOpen = (status) => {
@@ -73,6 +73,7 @@ export default function Home({ user }) {
             </div>
             {/* <Popup trigger={<button > Create box </button>} open={open}> <CreateBox createdStatus={boxCreated} /></Popup> */}
             {/* <Box box={openBox} style={openView ? {} : { display: 'none' }} /> */}
+            {openBox ? <Box openCallback={boxOpen} box={openBox} open={openView} /> : <div />}
         </div>
     )
 }

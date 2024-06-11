@@ -1,26 +1,30 @@
 #enter-class-code {
-    height: 10vh;
-    width: 38vw;
+    margin-top: 30vh;
+    height: 14vh;
+    /* width: 25vw; */
+    width: 5em;
     border-radius: 0.5em;
     text-align: center;
-    font-size: xxx-large;
-    font-stretch: wider;
+    font-size: 4em;
+    font-weight: 300;
+    font-stretch: ultra-expanded;
+    resize: none;
     overflow: hidden;
+    overflow-y: hidden;
 }
 
 #enter-class {
-    margin-top: 1vh;
+    margin-top: 1.5vh;
+    padding: 0.7em;
+    margin-bottom: 1vh;
 }
 
 #welcome-page {
-    /* display: flex; */
     height: 100vh;
     vertical-align: middle;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
-/* .break {
-    width: 100vw;
-    height: 0;
-} */
+.register-login {
+    margin: 0.25em;
+    text-decoration: none;
+}

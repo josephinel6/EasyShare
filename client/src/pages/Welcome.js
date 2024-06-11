@@ -1,4 +1,4 @@
-import "../styles/Welcome.css"
+import "../styles/welcome.css"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -22,17 +22,20 @@ export default function Welcome() {
             })
     }
 
+    const changeViewStatus = (status) => {
+        setFormOpen(status);
+    }
+
     return (
         <div id="welcome-page" className="center">
-            <input type="number" id="enter-class-code" placeholder="00000000" onChange={e => setCode(e.target.value)} />
+            <input id="enter-class-code" placeholder="00000000" onChange={e => setCode(e.target.value)} />
             <br />
             <div className="break"></div>
             <button className="styled-button" id="enter-class" onClick={() => processClass()}> Enter class </button>
             <br></br>
-            <Link to={'/register'}> Register</Link>
-            <br></br>
-            <Link to={'/login'}> Log in</Link>
-            <Popup open={formOpen}> <SubmitShare code={code} /></Popup>
+            <Link to={'/register'} id="register" className="register-login"> Register</Link>
+            <Link to={'/login'} id="login" className="register-login"> Log in</Link>
+            <Popup open={formOpen}> <SubmitShare code={code} openCallback={changeViewStatus} /></Popup>
         </div>
     )
 }

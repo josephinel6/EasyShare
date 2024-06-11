@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Box({ box, boxOpen, open }) {
+export default function Box({ box, openCallback, open }) {
 
     console.log(box);
 
@@ -47,7 +47,7 @@ export default function Box({ box, boxOpen, open }) {
             .then(
                 (response) => {
                     alert("Deleted successfully");
-                    boxOpen(false);
+                    openCallback(false);
                 })
             .catch(err => {
                 console.log(err);
@@ -59,7 +59,7 @@ export default function Box({ box, boxOpen, open }) {
     return (
         <div id="wrapper">
             <div id="box-contents" style={open ? {} : { display: 'none' }} >
-                <button className="close-button" onClick={() => boxOpen(false)}>x </button>
+                <button className="close-button" onClick={() => openCallback(false)}>x </button>
                 <FontAwesomeIcon icon={faTrashCan} onClick={() => deleteBox()} id="delete-box" />
                 <div id="shares">
                     <h1 id="box-name"> {box.name}</h1>

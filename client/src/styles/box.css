@@ -27,11 +27,12 @@
     padding-left: 0.8em;
     width: 85%;
     padding-right: 0.8em;
-    background-color: rgb(255, 233, 236);
+    background-color: rgb(255, 233, 233);
     z-index: 10;
     position: absolute;
-    top: 14vh;
+    top: 17vh;
     left: 7.5%;
+    box-shadow: 6px 6px 6px rgb(0 0 0 / 20%);
 }
 
 /* #shares {

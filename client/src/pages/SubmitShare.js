@@ -1,7 +1,8 @@
 import { useState } from "react"
 import axios from "axios";
+import "../styles/submit-share.css"
 
-export default function SubmitShare({ code }) {
+export default function SubmitShare({ code, openCallback }) {
 
     const [share, setShare] = useState("");
 
@@ -15,6 +16,7 @@ export default function SubmitShare({ code }) {
             })
             .then(() => {
                 alert("Thanks for sharing!");
+                openCallback(false);
             })
             .catch((err) => {
                 console.log(err);
@@ -23,9 +25,14 @@ export default function SubmitShare({ code }) {
     }
 
     return (
-        <div>
-            <input type="text" placeholder="Share!" onChange={(e) => { setShare(e.target.value) }}></input>
-            <button onClick={() => submit()}> Submit </button>
-        </div>
+        <center>
+            <div id="submit-share">
+                <button className="close-button" onClick={() => openCallback(false)}>x </button>
+                <textarea type="text" id="write-share" placeholder="Share!" rows={10} onChange={(e) => { setShare(e.target.value) }}></textarea>
+                <br></br>
+                {/* <div id="house-submit-button"> */}
+                <button onClick={() => submit()} class="styled-button" id="submit-share-button"> Submit </button></div>
+            {/* </div> */}
+        </center>
     )
 }
