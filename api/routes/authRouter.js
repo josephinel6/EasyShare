@@ -52,6 +52,7 @@ route.post('/login', async (req, res) => {
 
 route.post('/user', (req, res) => {
     const { token } = req.cookies;
+    console.log(req.cookies)
     console.log("Called 1")
 
     if (token) {
