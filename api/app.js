@@ -14,7 +14,7 @@ app.use(
   cors({
     credentials: true,
     // origin: "http://localhost:3000",
-    origin: "https://easy-share.vercel.com",
+    origin: "https://easy-share-site.vercel.com",
     // origin: "*",
   })
 );
