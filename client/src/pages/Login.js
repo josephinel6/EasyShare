@@ -7,7 +7,7 @@ export default function Register() {
 
     useEffect(() => {
         console.log("Call");
-        axios.post('/user')
+        axios.get('/user')
             .then((response) => {
                 if (response.data) {
                     navigate('/');
