@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser')
 
 route.use(cookieParser());
 
-route.get('/register', async (req, res) => {
+route.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
     console.log(req.body)
     try {
