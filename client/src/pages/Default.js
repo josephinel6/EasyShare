@@ -23,7 +23,7 @@ export default function Default() {
   useEffect(() => {
     console.log("Call");
     axios
-      .post("/user")
+      .get("/user")
       .then((response) => {
         console.log(response.data);
         setUser(response.data);
