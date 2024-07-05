@@ -1,15 +1,15 @@
-import './App.css';
-import Welcome from './pages/Welcome';
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Default from './pages/Default';
+import "./App.css";
+import Welcome from "./pages/Welcome";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Default from "./pages/Default";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import axios from 'axios';
-import Home from './pages/Home';
+import axios from "axios";
+import Home from "./pages/Home";
 
 // axios.defaults.baseURL = "http://localhost:4000";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "http://easy-share-backend.vercel.app";
 axios.defaults.withCredentials = true;
 
 function App() {
