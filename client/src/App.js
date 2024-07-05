@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 
 // axios.defaults.baseURL = "http://localhost:4000";
 
-axios.defaults.baseURL = "http://easy-share-backend.vercel.app";
+axios.defaults.baseURL = "https://easy-share-backend.vercel.app";
 axios.defaults.withCredentials = true;
 
 function App() {
