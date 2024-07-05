@@ -1,33 +1,35 @@
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose');
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-const boxRouter = require('./routes/boxRouter');
-const authRouter = require('./routes/authRouter');
+const boxRouter = require("./routes/boxRouter");
+const authRouter = require("./routes/authRouter");
 
-require('dotenv').config();
+require("dotenv").config();
 const app = express();
 
 app.use(express.json());
 
-app.use(cors({
+app.use(
+  cors({
     credentials: true,
-    origin: 'http://localhost:3000',
-    // origin: '*',
-}));
+    // origin: "http://localhost:3000",
+    origin: "https://easy-share.vercel.com",
+    // origin: "*",
+  })
+);
 
-app.use('/box', boxRouter);
-app.use('/', authRouter);
+app.use("/box", boxRouter);
+app.use("/", authRouter);
 
-mongoose.connect(process.env.DB_STRING)
-    .then(() => {
-        console.log("DB Connected")
-    })
+mongoose.connect(process.env.DB_STRING).then(() => {
+  console.log("DB Connected");
+});
 
-app.get('/', (req, res) => {
-    res.json("Working");
-    console.log("Working");
-})
+app.get("/", (req, res) => {
+  res.json("Working");
+  console.log("Working");
+});
 
 // function createToken(id) {
 //     jwt.sign({ id: id }, process.env.JWT_SECRET, {}, (err, token) => {
