@@ -18,6 +18,8 @@ app.use(
   })
 );
 
+app.set("trust proxy", true);
+
 app.use("/box", boxRouter);
 app.use("/", authRouter);
 
@@ -37,4 +39,4 @@ app.get("/", (req, res) => {
 //     })
 // }
 
-app.listen(3000);
+app.listen(4000);
